@@ -36,10 +36,10 @@ const SigIn = () => {
 
     if (firebase.auth()) {
       const firebaseui = await import('../npm__pt_br');
-      const ui =
-        firebaseui.auth.AuthUI.getInstance() ||
-        new firebaseui.auth.AuthUI(firebase.auth());
-      ui.start('#firebaseui', configUi);
+      if (!firebaseui.auth.AuthUI.getInstance()) {
+        const ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui', configUi);
+      }
     } else {
       Router.push('/error');
     }
