@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
+import Router from 'next/router';
 import { Flex, Text } from '@chakra-ui/react';
 
 export default function Custom404() {
+  useEffect(() => {
+    const redirect = Router.push('/');
+    return redirect;
+  }, [Router]);
+
   return (
     <Flex
       justify="center"

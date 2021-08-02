@@ -17,8 +17,8 @@ const SigIn = () => {
     signInFlow: 'popup',
     signInSuccessUrl: '/home',
     signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
-    tosUrl: '/terms-of-service',
-    privacyPolicyUrl: '/privacy-policy',
+    tosUrl: '/politica-de-privacidade',
+    privacyPolicyUrl: '/politica-de-privacidade',
   };
 
   useEffect(async () => {

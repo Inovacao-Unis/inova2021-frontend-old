@@ -2,7 +2,6 @@ import { createContext, useState, useEffect } from 'react';
 import Router from 'next/router';
 import Cookies from 'js-cookie';
 import firebase from '../lib/firebase';
-import api from '../services/api';
 
 const AuthContext = createContext();
 
@@ -40,15 +39,16 @@ export function AuthProvider({ children }) {
       return formatedUser.email;
     }
     setUser(false);
-    setSession(false);
+    setToken(false);
     return false;
   };
 
   const signout = async () => {
     try {
-      Router.push('/');
       await firebase.auth().signOut();
+      setToken(false);
       handleUser(false);
+      Router.push('/');
     } finally {
       setLoading(false);
     }
