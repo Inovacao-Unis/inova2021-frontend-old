@@ -7,7 +7,7 @@ function Layout({ children }) {
 
   return (
     <Box bgColor={bgColor} minH="100vh">
-      <Flex flexDirection="column" w="100%" pt="62px">
+      <Flex flexDirection="column" w="100%" pt="3">
         <Header />
         {children}
       </Flex>

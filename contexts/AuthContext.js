@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 import Router from 'next/router';
 import Cookies from 'js-cookie';
 import firebase from '../lib/firebase';
+import api from '../services/api';
 
 const AuthContext = createContext();
 
@@ -32,6 +33,7 @@ export function AuthProvider({ children }) {
       const getToken = await firebase
         .auth()
         .currentUser.getIdToken(/* forceRefresh */ true);
+      api.defaults.headers.common['Authorization'] = `Bearer ${getToken}`;
       setToken(getToken);
       const formatedUser = await formatUser(currentUser);
       setUser(formatedUser);

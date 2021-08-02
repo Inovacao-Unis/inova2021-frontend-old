@@ -5,6 +5,7 @@ import {
   Heading,
   Spacer,
   Button,
+  Center,
 } from '@chakra-ui/react';
 import useAuth from '../hooks/useAuth';
 
@@ -15,9 +16,9 @@ export default function Header() {
     <header>
       <Container maxW="container.xl">
         <Flex>
-          <Box p="2">
+          <Center>
             <Heading size="md">Inova 2021</Heading>
-          </Box>
+          </Center>
           <Spacer />
           <Box>
             <Button onClick={signout}>Sair</Button>

@@ -21,30 +21,34 @@ const SigIn = () => {
     privacyPolicyUrl: '/politica-de-privacidade',
   };
 
-  useEffect(async () => {
-    if (token) {
-      const data = await api.get('check', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (data?.status === 200) {
-        Router.push('/home');
-        return null;
+  useEffect(() => {
+    const check = async () => {
+      if (token) {
+        const data = await api.get('check', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (data?.status === 200) {
+          Router.push('/home');
+          return null;
+        }
       }
-    }
 
-    if (firebase.auth()) {
-      const firebaseui = await import('../npm__pt_br');
-      if (!firebaseui.auth.AuthUI.getInstance()) {
-        const ui = new firebaseui.auth.AuthUI(firebase.auth());
-        ui.start('#firebaseui', configUi);
+      if (firebase.auth()) {
+        const firebaseui = await import('../npm__pt_br');
+        if (!firebaseui.auth.AuthUI.getInstance()) {
+          const ui = new firebaseui.auth.AuthUI(firebase.auth());
+          ui.start('#firebaseui', configUi);
+        }
+      } else {
+        Router.push('/error');
       }
-    } else {
-      Router.push('/error');
-    }
 
-    return null;
+      return null;
+    };
+
+    return check();
   }, [token]);
 
   return <div id="firebaseui" />;

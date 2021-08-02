@@ -8,11 +8,13 @@ const withAuth = (Component) => (props) => {
   const Router = useRouter();
   const [verified, setVerified] = useState(false);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!token) {
       Router.push('/');
       return null;
     }
+
+    console.log('token: ', token);
 
     const check = async () => {
       const data = await api.get('check', {
