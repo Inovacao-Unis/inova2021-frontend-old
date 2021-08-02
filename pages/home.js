@@ -1,9 +1,9 @@
 import withAuth from 'src/components/withAuth';
 
-const Sobre = () => (
+const Home = () => (
   <div>
     <p>Texto sobre aqui</p>
   </div>
 );
 
-export default withAuth(Sobre);
+export default withAuth(Home);

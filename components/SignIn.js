@@ -15,7 +15,7 @@ const SigIn = () => {
       },
     },
     signInFlow: 'popup',
-    signInSuccessUrl: '/sobre',
+    signInSuccessUrl: '/home',
     signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
     tosUrl: '/terms-of-service',
     privacyPolicyUrl: '/privacy-policy',
@@ -29,7 +29,7 @@ const SigIn = () => {
         },
       });
       if (data?.status === 200) {
-        Router.push('/sobre');
+        Router.push('/home');
         return null;
       }
     }
