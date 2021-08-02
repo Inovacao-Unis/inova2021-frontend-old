@@ -29,7 +29,7 @@ const withAuth = (Component) => (props) => {
       }
     };
 
-    check();
+    return check();
   }, [token, verified]);
 
   if (verified) {

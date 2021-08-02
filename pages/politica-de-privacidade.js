@@ -17,7 +17,7 @@ export default function Politica() {
       <p>
         Apenas retemos as informações coletadas pelo tempo necessário para
         fornecer o serviço solicitado. Quando armazenamos dados, protegemos
-        dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos,
+        dentro de meios comercialmente aceitáveis para evitar perdas e roubos,
         bem como acesso, divulgação, cópia, uso ou modificação não autorizados.
       </p>
       <p>
@@ -49,7 +49,7 @@ export default function Politica() {
         coletam, como as usamos e por que às vezes precisamos armazenar esses
         cookies. Também compartilharemos como você pode impedir que esses
         cookies sejam armazenados, no entanto, isso pode fazer o downgrade ou
-        'quebrar' certos elementos da funcionalidade do site.
+        &apos;quebrar&apos; certos elementos da funcionalidade do site.
       </p>
       <h3>Como usamos os cookies?</h3>
       <p>
@@ -58,7 +58,7 @@ export default function Politica() {
         os cookies sem desativar completamente a funcionalidade e os recursos
         que eles adicionam a este site. É recomendável que você deixe todos os
         cookies se não tiver certeza se precisa ou não deles, caso sejam usados
-        ​​para fornecer um serviço que você usa.
+        para fornecer um serviço que você usa.
       </p>
       <h3>Desativar cookies</h3>
       <p>
@@ -97,8 +97,9 @@ export default function Politica() {
         <li>
           Cookies relacionados a boletins por e-mail
           <br />
-          <br /> Este site oferece serviços de assinatura de boletim informativo
-          ou e-mail e os cookies podem ser usados ​​para lembrar se você já está
+          <br />
+          Este site oferece serviços de assinatura de boletim informativo ou
+          e-mail e os cookies podem ser usados para lembrar se você já está
           registrado e se deve mostrar determinadas notificações válidas apenas
           para usuários inscritos / não inscritos.
           <br />
@@ -156,7 +157,7 @@ export default function Politica() {
       <ul>
         <li>
           Este site usa o Google Analytics, que é uma das soluções de análise
-          mais difundidas e confiáveis ​​da Web, para nos ajudar a entender como
+          mais difundidas e confiáveis da Web, para nos ajudar a entender como
           você usa o site e como podemos melhorar sua experiência. Esses cookies
           podem rastrear itens como quanto tempo você gasta no site e as páginas
           visitadas, para que possamos continuar produzindo conteúdo atraente.
@@ -177,8 +178,8 @@ export default function Politica() {
         <li>
           Periodicamente, testamos novos recursos e fazemos alterações subtis na
           maneira como o site se apresenta. Quando ainda estamos testando novos
-          recursos, esses cookies podem ser usados ​​para garantir que você
-          receba uma experiência consistente enquanto estiver no site, enquanto
+          recursos, esses cookies podem ser usados para garantir que você receba
+          uma experiência consistente enquanto estiver no site, enquanto
           entendemos quais otimizações os nossos usuários mais apreciam.
         </li>
         <li>

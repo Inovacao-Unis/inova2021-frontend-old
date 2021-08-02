@@ -39,6 +39,8 @@ const SigIn = () => {
       firebaseui.auth.AuthUI.getInstance() ||
       new firebaseui.auth.AuthUI(firebase.auth());
     ui.start('#firebaseui', configUi);
+
+    return null;
   }, [token]);
 
   return <div id="firebaseui" />;
