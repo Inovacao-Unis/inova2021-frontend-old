@@ -3,7 +3,7 @@ import { ChakraProvider, extendTheme, CSSReset } from '@chakra-ui/react';
 import { Global, css } from '@emotion/react';
 import { AuthProvider } from '../contexts/AuthContext';
 import theme from '../styles/theme';
-import '../styles/firebaseui.css';
+import '../styles/content.css';
 
 const myTheme = extendTheme(theme);
 

@@ -28,7 +28,13 @@ function Short({ formId }) {
           setIsDisabled(true);
           setSuccess(true);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          if (err.response) {
+            console.log(err.response.data.error);
+          } else {
+            console.log('Ocorreu um erro. Tente novamente, por favor.');
+          }
+        });
     };
 
     return getResponse();
@@ -43,8 +49,7 @@ function Short({ formId }) {
       await api
         .post('form-items', {
           title,
-          type: 'short',
-          form_id,
+          form_id: formId,
         })
         .then((res) => {
           if (res.status === 200) {

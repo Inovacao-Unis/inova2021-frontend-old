@@ -11,7 +11,18 @@ const SigIn = () => {
   const configUi = {
     callbacks: {
       signInSuccessWithAuthResult: (authResult) => {
-        handleUser(authResult.user);
+        authResult.user.getIdToken().then((idToken) => {
+          // Session login endpoint is queried and the session cookie is set.
+          // CSRF protection should be taken into account.
+          // ...
+          const csrfToken = Cookies.get('csrfToken');
+          return api
+            .post('sessionLogin', {
+              idToken,
+              csrfToken,
+            })
+            .then(async (res) => api.get('check'));
+        });
       },
     },
     signInFlow: 'popup',
@@ -36,6 +47,7 @@ const SigIn = () => {
       }
 
       if (firebase.auth()) {
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
         const firebaseui = await import('../npm__pt_br');
         if (!firebaseui.auth.AuthUI.getInstance()) {
           const ui = new firebaseui.auth.AuthUI(firebase.auth());

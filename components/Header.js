@@ -6,25 +6,35 @@ import {
   Spacer,
   Button,
   Center,
+  Text,
 } from '@chakra-ui/react';
-import useAuth from '../hooks/useAuth';
+import { useRouter } from 'next/router';
+import firebase from '../lib/firebase';
 
 export default function Header() {
-  const { signout } = useAuth();
+  const Router = useRouter();
 
   return (
-    <header>
+    <Box borderBottom="1px" borderColor="gray.700" py="10px">
       <Container maxW="container.xl">
         <Flex>
-          <Center>
+          <Center cursor="pointer" onClick={() => Router.push('/')}>
             <Heading size="md">Inova 2021</Heading>
           </Center>
           <Spacer />
-          <Box>
-            <Button onClick={signout}>Sair</Button>
-          </Box>
+          <Flex align="center">
+            <Text mr="3rem">Sobre o jogo</Text>
+            <Button
+              onClick={async () => {
+                await firebase.auth().signOut();
+                window.location.href = '/login';
+              }}
+            >
+              Sair
+            </Button>
+          </Flex>
         </Flex>
       </Container>
-    </header>
+    </Box>
   );
 }

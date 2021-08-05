@@ -1,6 +1,10 @@
 module.exports = {
-  reactStrictMode: true,
-  env: {
-    BASE_URL: process.env.BASE_URL,
+  target: 'serverless',
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    });
+    return config;
   },
 };

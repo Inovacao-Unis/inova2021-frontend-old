@@ -1,43 +1,59 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import useAuth from 'src/hooks/useAuth';
+import Cookies from 'js-cookie';
+import { useAuth } from '../contexts/AuthContext';
+import { Center, CircularProgress } from '@chakra-ui/react';
 import api from '../services/api';
 
 const withAuth = (Component) => (props) => {
-  const { setLoading, token } = useAuth();
   const Router = useRouter();
   const [verified, setVerified] = useState(false);
+  const { loading, setLoading } = useAuth();
 
   useEffect(() => {
+    setLoading(true);
+
+    const token = Cookies.get('itka');
+
     if (!token) {
-      Router.push('/');
+      setLoading(false);
+      Router.push('/login');
       return null;
     }
 
-    console.log('token: ', token);
-
     const check = async () => {
-      const data = await api.get('check', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (data?.status === 200) {
-        setLoading(false);
-        setVerified(true);
-      } else {
-        setLoading(false);
-        Router.push('/');
-      }
+      await api
+        .get('check')
+        .then(() => {
+          setLoading(false);
+          setVerified(true);
+        })
+        .catch((err) => {
+          console.log('error', err);
+          setLoading(false);
+          Router.push('/login');
+        });
     };
 
     return check();
-  }, [token, verified]);
+  }, []);
 
-  if (verified) {
-    return <Component {...props} />;
-  }
-  return null;
+  return (
+    <>
+      {verified ? (
+        <Component {...props} />
+      ) : (
+        <Center h="80vh">
+          <CircularProgress
+            isIndeterminate
+            value={30}
+            size="120px"
+            color="teal"
+          />
+        </Center>
+      )}
+    </>
+  );
 };
 
 export default withAuth;

@@ -1,24 +1,77 @@
-import { Center, Flex, Heading, Button } from '@chakra-ui/react';
-import SigIn from 'src/components/SignIn';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { Box, Container, Text, Circle, Flex } from '@chakra-ui/react';
+import Layout from '@components/Layout';
+import withAuth from '@components/withAuth';
 
-export default function Login() {
-  const router = useRouter();
-
-  function redirectToLogin() {
-    if (typeof window !== 'undefined') {
-      window.history.replaceState(null, '', '/');
-      router.reload();
-    }
-  }
+const Home = () => {
+  const [open, setOpen] = useState(false);
+  const Router = useRouter();
 
   return (
-    <Center h="80vh">
-      <Flex direction="column" align="center">
-        <Heading mb="5">Inova 2021</Heading>
-        <SigIn />
-        <Button onClick={() => redirectToLogin()}>Login</Button>
-      </Flex>
-    </Center>
+    <Layout>
+      <Container maxW="container.xl">
+        <Flex pt={4}>
+          <Flex w="100%" flexDirection="column" align="center" flex="1">
+            <Text fontSize="xl" mb="5rem" textTransform="uppercase">
+              Start
+            </Text>
+            <Flex
+              onClick={() => Router.push('/desafio/problema')}
+              cursor="pointer"
+              mr="auto"
+              ml="180px"
+            >
+              <Circle size="180px" bg={true ? 'tomato' : 'gray'} color="white">
+                <Text>Desafio 1</Text>
+              </Circle>
+            </Flex>
+            <Flex cursor="pointer" mr="180px" ml="auto">
+              <Circle size="210px" bg={false ? 'tomato' : 'gray'} color="white">
+                <Text>Desafio 2</Text>
+              </Circle>
+            </Flex>
+            <Flex cursor="pointer" mr="auto" ml="180px">
+              <Circle size="190px" bg={false ? 'tomato' : 'gray'} color="white">
+                <Text>Desafio 3</Text>
+              </Circle>
+            </Flex>
+            <Flex cursor="pointer" mr="180px" ml="auto">
+              <Circle size="200px" bg={false ? 'tomato' : 'gray'} color="white">
+                <Text>Desafio 4</Text>
+              </Circle>
+            </Flex>
+            <Flex cursor="pointer" mx="auto" mt="80px">
+              <Circle size="250px" bg={false ? 'tomato' : 'gray'} color="white">
+                <Text>Desafio Final</Text>
+              </Circle>
+            </Flex>
+          </Flex>
+          <Box w="430px">
+            <Box
+              border="1px"
+              borderColor="gray.600"
+              borderRadius="md"
+              ml="24px"
+              p="24px"
+              textAlign="center"
+            >
+              <Text fontSize="xl" mb={4}>
+                Ranking
+              </Text>
+              <Text mb={2}>Time 1</Text>
+              <Text mb={2}>Time 2</Text>
+              <Text mb={2}>Time 3</Text>
+              <Text mb={2}>Time 4</Text>
+              <Text mb={2}>Time 5</Text>
+              <Text mb={2}>Time 6</Text>
+              <Text mb={2}>Time 7</Text>
+            </Box>
+          </Box>
+        </Flex>
+      </Container>
+    </Layout>
   );
-}
+};
+
+export default withAuth(Home);
