@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { useAuth } from '@contexts/AuthContext';
+import Layout from '@components/Layout';
 import {
   Box,
   Flex,
@@ -36,10 +37,13 @@ export default function Login() {
     }
 
     const check = async () => {
-      await api.get('check').then(() => {
-        setLoading(false);
-        window.location.href = '/';
-      });
+      await api
+        .get('check')
+        .then(() => {
+          setLoading(false);
+          window.location.href = '/';
+        })
+        .catch((err) => console.log('error: ', err));
     };
 
     return check();
@@ -71,12 +75,12 @@ export default function Login() {
   };
 
   return (
-    <Flex>
-      <Box w={500} p={4} my={12} mx="auto">
+    <Layout noHeader>
+      <Box w={400} mx="auto" minH="100vh" pt="20vh" zIndex="888">
         <Heading textAlign="center" as="h2">
           Login
         </Heading>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} width="100%">
           <FormControl isRequired id="email">
             <FormLabel>E-mail</FormLabel>
             <Input
@@ -95,7 +99,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormControl>
-          <Button type="submit" width="full">
+          <Button bgColor="pink" type="submit" width="full">
             {isLoading ? (
               <CircularProgress isIndeterminate size="24px" color="teal" />
             ) : (
@@ -104,6 +108,6 @@ export default function Login() {
           </Button>
         </form>
       </Box>
-    </Flex>
+    </Layout>
   );
 }

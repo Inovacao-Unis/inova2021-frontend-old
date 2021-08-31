@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import { useAuth } from '../contexts/AuthContext';
 import { Center, CircularProgress } from '@chakra-ui/react';
+import { useAuth } from '../contexts/AuthContext';
 import api from '../services/api';
 
 const withAuth = (Component) => (props) => {
