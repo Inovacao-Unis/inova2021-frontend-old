@@ -13,9 +13,6 @@ const Home = () => {
       <Container maxW="container.xl">
         <Flex pt={4}>
           <Flex w="100%" flexDirection="column" align="center" flex="1">
-            <Text fontSize="xl" mb="5rem" textTransform="uppercase">
-              Start
-            </Text>
             <Flex
               onClick={() => Router.push('/desafio/problema')}
               cursor="pointer"

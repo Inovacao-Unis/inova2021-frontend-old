@@ -46,7 +46,7 @@ export default function Header() {
               <PopoverTrigger>
                 <BellIcon mr="1.5rem" w={8} h={8} cursor="pointer" />
               </PopoverTrigger>
-              <PopoverContent mt="2" color="gray.600">
+              <PopoverContent mt="2" color="gray.600" borderColor="#fff">
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader fontWeight="bold">Notificações</PopoverHeader>
