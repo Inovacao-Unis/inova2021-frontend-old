@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Box, Container, Text, Circle, Flex } from '@chakra-ui/react';
 import Layout from '@components/Layout';
 import withAuth from '@components/withAuth';
+import Ranking from '@components/Ranking';
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -44,26 +45,8 @@ const Home = () => {
               </Circle>
             </Flex>
           </Flex>
-          <Box w="430px">
-            <Box
-              border="1px"
-              borderColor="gray.600"
-              borderRadius="md"
-              ml="24px"
-              p="24px"
-              textAlign="center"
-            >
-              <Text fontSize="xl" mb={4}>
-                Ranking
-              </Text>
-              <Text mb={2}>Time 1</Text>
-              <Text mb={2}>Time 2</Text>
-              <Text mb={2}>Time 3</Text>
-              <Text mb={2}>Time 4</Text>
-              <Text mb={2}>Time 5</Text>
-              <Text mb={2}>Time 6</Text>
-              <Text mb={2}>Time 7</Text>
-            </Box>
+          <Box w="400px">
+            <Ranking />
           </Box>
         </Flex>
       </Container>
