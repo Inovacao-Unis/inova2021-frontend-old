@@ -5,7 +5,7 @@ import { useAuth } from '@contexts/AuthContext';
 import Layout from '@components/Layout';
 import {
   Box,
-  Flex,
+  Text,
   Input,
   FormControl,
   FormLabel,
@@ -13,6 +13,7 @@ import {
   Heading,
   CircularProgress,
   useToast,
+  Link,
 } from '@chakra-ui/react';
 import firebase from '@lib/firebase';
 import firebaseErrors from '@utils/firebaseErrors';
@@ -41,7 +42,7 @@ export default function Login() {
         .get('check')
         .then(() => {
           setLoading(false);
-          window.location.href = '/';
+          window.location.href = '/minha-conta';
         })
         .catch((err) => console.log('error: ', err));
     };
@@ -59,7 +60,7 @@ export default function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         setIsLoading(false);
-        window.location.href = '/';
+        window.location.href = '/minha-conta';
       })
       .catch((error) => {
         setIsLoading(false);
@@ -120,6 +121,16 @@ export default function Login() {
             )}
           </Button>
         </form>
+        <Box mt="3rem" textAlign="center">
+          <Text>Problemas para entrar? Envie um e-mail para:</Text>
+          <Link
+            fontWeight="bold"
+            fontSize="1.4rem"
+            href="mailto:inovacao@unis.edu.br"
+          >
+            inovacao@unis.edu.br
+          </Link>
+        </Box>
       </Box>
     </Layout>
   );

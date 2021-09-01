@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 
 const minhaConta = () => (
-  <Layout>
+  <Layout profile>
     <Container maxW="container.xl">
       <Heading
         fontSize="2.5rem"
@@ -26,7 +26,7 @@ const minhaConta = () => (
         templateColumns="repeat(auto-fit, minmax(275px, 300px))"
         gap="100px"
       >
-        <Link href="/">
+        <Link href="/jornada/design-thinking">
           <Flex
             direction="column"
             justify="center"

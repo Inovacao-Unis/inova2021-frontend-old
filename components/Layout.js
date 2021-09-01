@@ -1,21 +1,8 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
-import withAuth from './withAuth';
+import { Box, Flex } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
 
-function Layout({ children, noHeader }) {
-  const bgColor = useColorModeValue('#F4F6F8', '#1A202C');
-
-  // return (
-  //   <Box bgColor={bgColor} minH="100vh">
-  //     <Flex flexDirection="column" w="100%">
-  //       <Header />
-  //       {children}
-  //       <Footer />
-  //     </Flex>
-  //   </Box>
-  // );
-
+function Layout({ children, noHeader, profile }) {
   return (
     <Box>
       <Box
@@ -29,7 +16,7 @@ function Layout({ children, noHeader }) {
         <div id="stars2" />
         <div id="stars3" />
         <Flex flexDirection="column" w="100%" zIndex="888">
-          {noHeader ? null : <Header />}
+          {noHeader ? null : <Header profile={profile} />}
           {children}
           <Footer />
         </Flex>

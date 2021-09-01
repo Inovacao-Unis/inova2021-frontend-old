@@ -17,7 +17,7 @@ export default function BlogPost({
 
   return (
     <>
-      <Layout>
+      <Layout profile>
         <Box
           bgColor="white"
           color="black"
