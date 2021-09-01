@@ -4,6 +4,7 @@ import { Box, Container, Text, Circle, Flex } from '@chakra-ui/react';
 import Layout from '@components/Layout';
 import withAuth from '@components/withAuth';
 import Ranking from '@components/Ranking';
+import JourneyInfo from '@components/JourneyInfo';
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <Container maxW="container.xl">
+      <Container maxW="container.xl" zIndex="800">
         <Flex pt={4}>
           <Flex w="100%" flexDirection="column" align="center" flex="1">
             <Flex
@@ -20,7 +21,11 @@ const Home = () => {
               mr="auto"
               ml="180px"
             >
-              <Circle size="180px" bg={true ? 'tomato' : 'gray'} color="white">
+              <Circle
+                size="180px"
+                bg={true ? 'highlight' : 'gray'}
+                color="white"
+              >
                 <Text>Desafio 1</Text>
               </Circle>
             </Flex>
@@ -46,6 +51,7 @@ const Home = () => {
             </Flex>
           </Flex>
           <Box w="400px">
+            <JourneyInfo status={30} />
             <Ranking />
           </Box>
         </Flex>

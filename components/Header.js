@@ -31,7 +31,11 @@ export default function Header() {
   const Router = useRouter();
 
   return (
-    <Box borderBottom="solid 0.5px rgba(255, 255, 255, 0.13)" py="10px">
+    <Box
+      borderBottom="solid 0.5px rgba(255, 255, 255, 0.13)"
+      zIndex="999"
+      py="10px"
+    >
       <Container maxW="container.xl">
         <Flex>
           <Center cursor="pointer" onClick={() => Router.push('/')}>
@@ -42,15 +46,30 @@ export default function Header() {
           <Spacer />
           <Flex align="center">
             <Text mr="3rem">Sobre o jogo</Text>
-            <Popover>
+            <Flex align="center" mr="3rem">
+              <Box maxW="25px" mr="0.5rem">
+                <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+              </Box>
+              <Text fontSize="1.2rem">100</Text>
+            </Flex>
+            <Popover zIndex="999">
               <PopoverTrigger>
                 <BellIcon mr="1.5rem" w={8} h={8} cursor="pointer" />
               </PopoverTrigger>
-              <PopoverContent mt="2" color="gray.600" borderColor="#fff">
+              <PopoverContent
+                zIndex="999"
+                mt="2"
+                color="gray.600"
+                borderColor="#fff"
+                _focus={{
+                  boxShadow: '0 0 0 3px rgba(0, 0, 0, 0.3)',
+                  outline: '2px solid transparent',
+                }}
+              >
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader fontWeight="bold">Notificações</PopoverHeader>
-                <PopoverBody>
+                <PopoverBody zIndex="999">
                   <List>
                     <ListItem fontSize=".9rem" py=".8rem">
                       Você completou sua jornada!
@@ -75,19 +94,19 @@ export default function Header() {
               </PopoverContent>
             </Popover>
             <Menu>
-              <MenuButton>
+              <MenuButton zIndex="999">
                 <Avatar name="Nome perfil" src="https://bit.ly/dan-abramov" />
               </MenuButton>
-              <MenuList>
-                <MenuItem color="pink">
+              <MenuList zIndex="999">
+                <MenuItem color="highlight">
                   <Link href="/minha-conta">
                     <a>Minhas Jornadas</a>
                   </Link>
                 </MenuItem>
-                <MenuItem color="pink">Perfil</MenuItem>
-                <MenuItem color="pink">Configurações</MenuItem>
+                <MenuItem color="highlight">Perfil</MenuItem>
+                <MenuItem color="highlight">Configurações</MenuItem>
                 <MenuItem
-                  color="pink"
+                  color="highlight"
                   onClick={async () => {
                     await firebase.auth().signOut();
                     window.location.href = '/login';

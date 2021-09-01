@@ -86,6 +86,10 @@ export default function Login() {
             <Input
               type="email"
               mb={4}
+              _focus={{
+                boxShadow: '0 0 0 3px rgba(0, 0, 0, 0.3)',
+                outline: '2px solid transparent',
+              }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -95,13 +99,22 @@ export default function Login() {
             <Input
               type="password"
               mb={4}
+              _focus={{
+                boxShadow: '0 0 0 3px rgba(0, 0, 0, 0.3)',
+                outline: '2px solid transparent',
+              }}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormControl>
-          <Button bgColor="pink" type="submit" width="full">
+          <Button
+            bgColor="highlight"
+            _hover={{ bg: 'highlight' }}
+            type="submit"
+            width="full"
+          >
             {isLoading ? (
-              <CircularProgress isIndeterminate size="24px" color="teal" />
+              <CircularProgress isIndeterminate size="24px" color="highlight" />
             ) : (
               'Enviar'
             )}

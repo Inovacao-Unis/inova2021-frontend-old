@@ -2,6 +2,7 @@ import { Container, Box, Text, Heading } from '@chakra-ui/react';
 import Link from 'next/link';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import Short from '@components/Short';
 
 import Layout from '@components/Layout';
 import getSlugs from '@utils/getSlugs';
@@ -17,20 +18,30 @@ export default function BlogPost({
   return (
     <>
       <Layout>
-        <Container mt="3rem">
-          <Box>
-            ←{' '}
-            <Link href="/">
-              <a>Voltar</a>
-            </Link>
-          </Box>
-          <Heading>{frontmatter.title}</Heading>
-          <Box>
-            <div className="archive">
-              <ReactMarkdown>{markdownBody}</ReactMarkdown>
-            </div>
-          </Box>
-        </Container>
+        <Box
+          bgColor="white"
+          color="black"
+          w="100%"
+          maxW="100%"
+          zIndex="900"
+          pb="5rem"
+        >
+          <Container mt="3rem">
+            <Box>
+              ←{' '}
+              <Link href="/">
+                <a>Voltar</a>
+              </Link>
+            </Box>
+            <Heading>{frontmatter.title}</Heading>
+            <Box>
+              <div className="archive">
+                <ReactMarkdown>{markdownBody}</ReactMarkdown>
+              </div>
+              <Short />
+            </Box>
+          </Container>
+        </Box>
       </Layout>
     </>
   );

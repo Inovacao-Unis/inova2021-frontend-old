@@ -8,7 +8,6 @@ const Ranking = () => (
     border="1px"
     borderColor="gray.600"
     borderRadius="md"
-    ml="24px"
     pt="2rem"
     pb="4px"
     px="0"

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   FormControl,
@@ -9,7 +9,7 @@ import {
   Alert,
   AlertIcon,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+
 import api from '../services/api';
 
 function Short({ formId }) {
@@ -73,6 +73,9 @@ function Short({ formId }) {
           <Input
             type="text"
             mb={4}
+            _focus={{
+              borderColor: '#bec3c9',
+            }}
             isDisabled={isDisabled}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -84,7 +87,13 @@ function Short({ formId }) {
             Resposta enviada com sucesso!
           </Alert>
         ) : (
-          <Button type="submit" width="full">
+          <Button
+            bgColor="highlight"
+            color="white"
+            _hover={{ bg: 'highlight' }}
+            type="submit"
+            width="full"
+          >
             {isLoading ? (
               <CircularProgress isIndeterminate size="24px" color="teal" />
             ) : (

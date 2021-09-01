@@ -48,7 +48,7 @@ const withAuth = (Component) => (props) => {
             isIndeterminate
             value={30}
             size="120px"
-            color="teal"
+            color="highlight"
           />
         </Center>
       )}
