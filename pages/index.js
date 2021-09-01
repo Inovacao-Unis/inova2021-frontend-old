@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { useAuth } from '@contexts/AuthContext';
 import Layout from '@components/Layout';
-import { Container, Text, Button, Flex } from '@chakra-ui/react';
+import { Container, Text, Button, Flex, Image } from '@chakra-ui/react';
 import api from '../services/api';
 
 const Home = () => {
@@ -36,14 +36,25 @@ const Home = () => {
   return (
     <Layout>
       <Flex w="100vw" minH="100vh" direction="column" align="center">
+        <Image
+          src="/images/astronaut.png"
+          alt="Imagem de astronauta"
+          position="absolute"
+          top="0"
+          bottom="0"
+          right="0"
+          maxW="620px"
+        />
         <Container maxW="container.xl">
           <Flex direction="column" align="center" pt="15vh">
-            <Text fontSize="2.5rem">seja</Text>
+            <Text fontSize="3rem">seja</Text>
             <Text
-              fontSize="3.5rem"
+              fontSize="4rem"
+              lineHeight="4rem"
               fontWeight="bold"
               mb="3rem"
               textTransform="uppercase"
+              fontFamily="fontastique"
             >
               bem-vindo
             </Text>

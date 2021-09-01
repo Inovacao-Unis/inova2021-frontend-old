@@ -3,6 +3,7 @@ import { ChakraProvider, extendTheme, CSSReset } from '@chakra-ui/react';
 import { Global, css } from '@emotion/react';
 import { AuthProvider } from '../contexts/AuthContext';
 import theme from '../styles/theme';
+import '../styles/fonts.css';
 import '../styles/background.css';
 import '../styles/content.css';
 
