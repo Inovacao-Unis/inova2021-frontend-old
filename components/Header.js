@@ -51,7 +51,9 @@ export default function Header({ profile }) {
                 <Box maxW="25px" mr="0.5rem">
                   <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
                 </Box>
-                <Text fontSize="1.2rem">100</Text>
+                <Text fontSize="1.2rem" color="#fec739">
+                  100
+                </Text>
               </Flex>
               <Popover zIndex="999">
                 <PopoverTrigger>
@@ -96,7 +98,7 @@ export default function Header({ profile }) {
               </Popover>
               <Menu>
                 <MenuButton zIndex="999">
-                  <Avatar name="Nome perfil" src="https://bit.ly/dan-abramov" />
+                  <Avatar name="Nome perfil" src="/images/zebra.jpg" />
                 </MenuButton>
                 <MenuList zIndex="999">
                   <MenuItem color="highlight">
@@ -104,8 +106,16 @@ export default function Header({ profile }) {
                       <a>Minhas Jornadas</a>
                     </Link>
                   </MenuItem>
-                  <MenuItem color="highlight">Perfil</MenuItem>
-                  <MenuItem color="highlight">Configurações</MenuItem>
+                  <MenuItem color="highlight">
+                    <Link href="/perfil">
+                      <a>Perfil</a>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem color="highlight">
+                    <Link href="/editar-perfil">
+                      <a>Configurações</a>
+                    </Link>
+                  </MenuItem>
                   <MenuItem
                     color="highlight"
                     onClick={async () => {

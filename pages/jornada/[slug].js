@@ -11,7 +11,7 @@ const Journey = () => {
   return (
     <Layout profile>
       <Container maxW="container.xl" zIndex="800">
-        <Flex pt={4}>
+        <Flex py={4}>
           <Flex w="100%" flexDirection="column" align="center" flex="1">
             <Flex
               onClick={() => Router.push('/desafio/problema')}

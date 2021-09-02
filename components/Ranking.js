@@ -1,4 +1,4 @@
-import { Flex, Text, Avatar } from '@chakra-ui/react';
+import { Flex, Text, Avatar, Box, Image } from '@chakra-ui/react';
 
 const Ranking = () => (
   <Flex
@@ -23,7 +23,7 @@ const Ranking = () => (
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -34,15 +34,40 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">500</Text>
+        </Flex>
+      </Flex>
+      <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
+        <Text fontSize="1.2rem" mr="15px">
+          2
         </Text>
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
+        <Text
+          fontWeight="bold"
+          overflow="hidden"
+          textOverflow="ellipsis"
+          whiteSpace="nowrap"
+          mr="15px"
+          fontSize="1.2rem"
+        >
+          Time 2
+        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
       <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -53,15 +78,18 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
       <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -72,15 +100,18 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
       <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -91,15 +122,18 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
       <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -110,15 +144,18 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
       <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -129,15 +166,18 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
       <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
         <Text fontSize="1.2rem" mr="15px">
           1
         </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
+        <Avatar mr="15px" name="Nome perfil" src="/images/zebra.jpg" />
         <Text
           fontWeight="bold"
           overflow="hidden"
@@ -148,28 +188,12 @@ const Ranking = () => (
         >
           Time 1
         </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
-      </Flex>
-      <Flex w="100%" align="center" minH="60px" py="1rem" px="2rem">
-        <Text fontSize="1.2rem" mr="15px">
-          1
-        </Text>
-        <Avatar mr="15px" name="Nome perfil" src="https://bit.ly/dan-abramov" />
-        <Text
-          fontWeight="bold"
-          overflow="hidden"
-          textOverflow="ellipsis"
-          whiteSpace="nowrap"
-          mr="15px"
-          fontSize="1.2rem"
-        >
-          Time 1
-        </Text>
-        <Text fontSize="1.2rem" flexGrow="1" textAlign="right">
-          300
-        </Text>
+        <Flex flexGrow="1" textAlign="right" align="center" justify="end">
+          <Box maxW="15px" mr="0.5rem">
+            <Image src="/images/pointIcon.png" alt="Ícone dos pontos" />
+          </Box>
+          <Text fontSize="1.2rem">100</Text>
+        </Flex>
       </Flex>
     </Flex>
   </Flex>
