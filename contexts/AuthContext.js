@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
           return;
         }
 
-        const token = await currentUser.getIdToken();
+        const token = await currentUser.getIdToken(true);
         setUser(currentUser);
         Cookies.set('itka', token, { expires: 60 });
       }),
