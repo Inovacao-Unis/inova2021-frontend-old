@@ -7,6 +7,7 @@ import JourneyInfo from '@components/JourneyInfo';
 
 const Journey = () => {
   const Router = useRouter();
+  const { jornadaSlug } = Router.query;
 
   return (
     <Layout profile>
@@ -14,7 +15,7 @@ const Journey = () => {
         <Flex py={4}>
           <Flex w="100%" flexDirection="column" align="center" flex="1">
             <Flex
-              onClick={() => Router.push('/desafio/problema')}
+              onClick={() => Router.push(`/jornada/${jornadaSlug}/problema`)}
               cursor="pointer"
               mr="auto"
               ml="180px"
