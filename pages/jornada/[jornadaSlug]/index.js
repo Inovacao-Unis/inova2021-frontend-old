@@ -50,7 +50,7 @@ const Journey = () => {
             </Flex>
           </Flex>
           <Box w="400px">
-            <JourneyInfo status={30} />
+            <JourneyInfo status={30} jornadaSlug={jornadaSlug} />
             <Ranking />
           </Box>
         </Flex>
